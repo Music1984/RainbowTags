@@ -1,6 +1,7 @@
 ﻿using System;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs;
+using Exiled.Events.EventArgs.Player;
 using UnityEngine;
 
 namespace RainbowTags
@@ -31,7 +32,7 @@ namespace RainbowTags
 
 		public static void AddRainbowController(Player Ply)
 		{
-			if (Ply.ReferenceHub.TryGetComponent(out RainbowTagController RainbowTagCtrl))
+			if (Ply.GameObject.TryGetComponent(out RainbowTagController RainbowTagCtrl))
 				return;
 
 			Ply.GameObject.AddComponent<RainbowTagController>();
